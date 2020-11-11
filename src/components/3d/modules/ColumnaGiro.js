@@ -13,7 +13,7 @@ export default function Model(props) {
     <group ref={group} {...props}>
       <mesh castShadow receiveShadow material={materials['Mat.2']} geometry={nodes.Columna_esquina.geometry} position={[0, 0.013694, 0]}></mesh>
       <Suspense fallback={null}>
-        <PositionalAudio loop url="/objs-8.mp3" distance={0.8}/>
+        <PositionalAudio loop url="/objs-8.mp3" distance={3}/>
       </Suspense>
     </group>
   )

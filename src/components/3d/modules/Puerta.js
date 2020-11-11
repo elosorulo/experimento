@@ -12,7 +12,7 @@ export default function Model(props) {
     <group castShadow receiveShadow ref={group} {...props}>
       <mesh castShadow receiveShadow material={materials['Mat.2']} geometry={nodes.Puerta.geometry}  position={[0, 0.013694, 0]}/>
       <Suspense fallback={null}>
-        <PositionalAudio loop url="/experimento/objs-11.mp3" distance={0.8}/>
+        <PositionalAudio loop url="/experimento/objs-11.mp3" distance={3}/>
       </Suspense>
     </group>
   )
