@@ -27,12 +27,12 @@ const cubeRenderTarget = new WebGLCubeRenderTarget(256, {
       const loader = new CubeTextureLoader();
   
       const texture = loader.load([
-        "experimento/sky-1.png",
-        "experimento/sky-2.png",
-        "experimento/sky-3.png",
-        "experimento/sky-4.png",
-        "experimento/sky-5.png",
-        "experimento/sky-6.png",
+        process.env.REACT_APP_PREFIX + "sky-1.png",
+        process.env.REACT_APP_PREFIX + "sky-2.png",
+        process.env.REACT_APP_PREFIX + "sky-3.png",
+        process.env.REACT_APP_PREFIX + "sky-4.png",
+        process.env.REACT_APP_PREFIX + "sky-5.png",
+        process.env.REACT_APP_PREFIX + "sky-6.png",
       ]);
       scene.background = texture;
     }

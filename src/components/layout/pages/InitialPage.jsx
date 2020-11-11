@@ -17,7 +17,7 @@ const Description = () => {
     return (
         <Grid item xs={12}>
             <Title mobileHorizontal={mobileHorizontal}>Experimento</Title>
-            <SubTitle mobileHorizontal={mobileHorizontal}>Espacios Generativos</SubTitle>
+            <SubTitle mobileHorizontal={mobileHorizontal}>Espacio Procedural</SubTitle>
             <Credits mobileHorizontal={mobileHorizontal}>Manuel Strajman</Credits>
             <Credits mobileHorizontal={mobileHorizontal}>Esteban Sagman</Credits>
             <Credits mobileHorizontal={mobileHorizontal}>Leonel Sagman</Credits>

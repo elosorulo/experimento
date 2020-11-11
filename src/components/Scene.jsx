@@ -4,7 +4,7 @@ import SpotLightsProvider from './providers/SpotLightsProvider';
 import PlanesProvider from './providers/PlanesProvider';
 import Sequencer from './Sequencer';
 import Effects from './Effects';
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, Environment } from '@react-three/drei';
 import SkyBox from './3d/models/SkyBox';
 import WavesGenerator from './WavesGenerator';
 import WaveModules from './WaveModules';
@@ -36,7 +36,9 @@ const Scene = (props) => {
   return (
     <>
     <OrbitControls ref={orbitRef} enableKeys/>
-    <SkyBox/>
+    <React.Suspense fallback={null}>
+      <Environment background={true} files={['sky-1.png', 'sky-2.png', 'sky-3.png', 'sky-4.png', 'sky-5.png', 'sky-6.png']} path={'/experimento/'} />
+    </React.Suspense>
     <SpotLightsProvider/>
     <AmbientLightProvider/>
     <PlanesProvider/>
