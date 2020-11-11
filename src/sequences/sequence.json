@@ -10,7 +10,7 @@
                 "key": "ambiente",
                 "file": "ambient.ogg",
                 "loop": true,
-                "volume": 0.1
+                "volume": 0.5
             }
         },
         {
@@ -54,8 +54,8 @@
             "action": "SET",
             "element": "SPOT_LIGHT",
             "props": {
-                "position": [-50, 30, -40],
-                "target": [10, 0, 10],
+                "position": [-100, 5, -100],
+                "target": [-80, 0, -80],
                 "angle": 1,
                 "penumbra": 0.5,
                 "intensity": 0.9,
