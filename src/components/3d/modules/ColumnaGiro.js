@@ -7,7 +7,7 @@ import { PositionalAudio } from '@react-three/drei'
 
 export default function Model(props) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/ColumnaGiro.gltf')
+  const { nodes, materials } = useGLTF('/experimento/ColumnaGiro.gltf')
 
   return (
     <group ref={group} {...props}>
@@ -19,4 +19,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('/ColumnaGiro.gltf')
+useGLTF.preload('/experimento/ColumnaGiro.gltf')

@@ -27,12 +27,12 @@ const cubeRenderTarget = new WebGLCubeRenderTarget(256, {
       const loader = new CubeTextureLoader();
   
       const texture = loader.load([
-        "sky-1.png",
-        "sky-2.png",
-        "sky-3.png",
-        "sky-4.png",
-        "sky-5.png",
-        "sky-6.png",
+        "experimento/sky-1.png",
+        "experimento/sky-2.png",
+        "experimento/sky-3.png",
+        "experimento/sky-4.png",
+        "experimento/sky-5.png",
+        "experimento/sky-6.png",
       ]);
       scene.background = texture;
     }

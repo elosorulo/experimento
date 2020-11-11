@@ -6,7 +6,7 @@ const SoundContext = React.createContext();
 
 let sounds = {};
 
-const PREFIX = "/sound/";
+const PREFIX = "/experimento/sound/";
 
 
 export const eventTypes = {

@@ -17,7 +17,7 @@ const mat = (oldMat) => {
 export default function Model(props) {
   
   const group = useRef()
-  const { nodes, materials } = useGLTF('/ColumnaGiroNS.gltf')
+  const { nodes, materials } = useGLTF('/experimento/ColumnaGiroNS.gltf')
   return (
     <group ref={group} {...props}>
       <mesh receiveShadow castShadow material={materials['Mat.2']} geometry={nodes.Columna_Ns.geometry} position={[0.655, 0, -0.655]}>
@@ -26,4 +26,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('/ColumnaGiroNS.gltf')
+useGLTF.preload('/experimento/ColumnaGiroNS.gltf')

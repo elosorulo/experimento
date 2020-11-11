@@ -9618,6 +9618,11 @@ react-merge-refs@^1.0.0, react-merge-refs@^1.1.0:
   resolved "https://registry.yarnpkg.com/react-merge-refs/-/react-merge-refs-1.1.0.tgz#73d88b892c6c68cbb7a66e0800faa374f4c38b06"
   integrity sha512-alTKsjEL0dKH/ru1Iyn7vliS2QRcBp9zZPGoWxUOvRGWPUYgjo+V01is7p04It6KhgrzhJGnIj9GgX8W4bZoCQ==
 
+react-polyfill@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/react-polyfill/-/react-polyfill-0.0.2.tgz#24ea676af8219ecf261dc5fa67e8b84437fdea9a"
+  integrity sha1-JOpnavghns8mHcX6Z+i4RDf96po=
+
 react-reconciler@0.26.0:
   version "0.26.0"
   resolved "https://registry.yarnpkg.com/react-reconciler/-/react-reconciler-0.26.0.tgz#053ae2fd1607e38a960e7a694ad694732e4989b6"

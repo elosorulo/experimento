@@ -7,7 +7,7 @@ import { PositionalAudio } from '@react-three/drei'
 
 export default function Model(props) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/ParedEsquina.gltf')
+  const { nodes, materials } = useGLTF('/experimento/ParedEsquina.gltf')
   return (
     <group ref={group} {...props}>
       <mesh castShadow receiveShadow material={materials['Mat.2']} geometry={nodes.Pared_esquina.geometry} >
@@ -19,4 +19,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('/ParedEsquina.gltf')
+useGLTF.preload('/experimento/ParedEsquina.gltf')
