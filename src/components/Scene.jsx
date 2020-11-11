@@ -1,31 +1,49 @@
-import React from 'react';
-import CameraProvider from './providers/CameraProvider';
+import React, { useRef } from 'react';
 import AmbientLightProvider from './providers/AmbientLightProvider';
 import SpotLightsProvider from './providers/SpotLightsProvider';
 import PlanesProvider from './providers/PlanesProvider';
-import RingAnimations from './animations/RingsAnimations';
 import Sequencer from './Sequencer';
-import DodecahedronsAnimations from './animations/DodecahedronsAnimations';
-import SpheresAnimations from './animations/SpheresAnimations';
-import TetrahedronsAnimations from './animations/TetrahedronsAnimations';
-import LathesAnimations from './animations/LathesAnimations';
-import Panels from './shapes/Panels';
-import { Effects, OrbitControls } from '@react-three/drei';
-import Cube from './3d/models/Cube';
+import Effects from './Effects';
+import { OrbitControls } from '@react-three/drei';
 import SkyBox from './3d/models/SkyBox';
-import WaveTest from './WaveTest';
+import WavesGenerator from './WavesGenerator';
+import WaveModules from './WaveModules';
+import { useThree } from 'react-three-fiber';
+import { sRGBEncoding } from 'three';
 
+/**
+ * = Piso
+ * | Columna
+ * @ Columna Superior
+ * X pared
+ * # Pared Superior
+ * _ Aire
+ */
+
+//<Effects/>
+//<WaveModules/>
 const Scene = (props) => {
+  const orbitRef = useRef();
+  const { gl } = useThree();
+  React.useEffect(() => {
+    gl.shadowMap.renderSingleSided = false
+    gl.outputEncoding = sRGBEncoding
+    gl.gammaOutput = true;
+    gl.gammaFactor = 2.2;
+    orbitRef.current.enableKeys = true;
+  }, [])
 
   return (
     <>
-    <WaveTest/>
-    <OrbitControls/>
-    <SkyBox />
+    <OrbitControls ref={orbitRef} enableKeys/>
+    <SkyBox/>
     <SpotLightsProvider/>
     <AmbientLightProvider/>
+    <PlanesProvider/>
     <Sequencer soundsApi={props.soundsApi}/>
-    <Cube/>
+    <WavesGenerator/>
+    <Effects/>
+    <WaveModules/>
     </>
   );
 };

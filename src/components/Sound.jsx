@@ -1,5 +1,6 @@
 import React from 'react';
 import {Howl} from 'howler';
+import { omit } from 'lodash';
 
 const SoundContext = React.createContext();
 
@@ -7,7 +8,6 @@ let sounds = {};
 
 const PREFIX = "/sound/";
 
-const EXTENSION = ".wav";
 
 export const eventTypes = {
     ADD_SOUND: "ADD_SOUND",
@@ -18,12 +18,13 @@ export const eventTypes = {
 };
 
 const soundFns = {
-    add: (key, file, startTime) => {
+    add: (key, file, startTime, props) => {
         sounds[key] = new Howl({
-            src: [PREFIX + file + EXTENSION],
+            src: [PREFIX + file],
             sprite: {
                 [`${key}_sound`]: [startTime * 1000, 1800000]
-            }
+            },
+            ...omit(props, ["key", "file"])
         });
     },
     loop: (key, loop) => {
@@ -46,7 +47,7 @@ var soundApi = {
     execute: (action) => {
         switch(action.type) {
             case eventTypes.ADD_SOUND:
-                soundFns.add(action.props.key, action.props.file, action.startTime);
+                soundFns.add(action.props.key, action.props.file, action.startTime, action.props);
                 break;
             case eventTypes.PLAY_SOUND:
                 soundFns.play(action.props.key);
@@ -66,7 +67,6 @@ var soundApi = {
 };
 
 export const Sound = (props) => {
-
     return (
         <SoundContext.Provider value={soundApi}>
             {props.children}

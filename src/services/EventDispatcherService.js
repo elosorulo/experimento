@@ -5,6 +5,7 @@ const isSoundEvent = action => Object.values(SoundEventTypes).includes(action.ty
 const EventDispatcherService = {
     play: (events, startTime, dispatch, clock, soundsApi) => {
         events.map(event => {
+            console.log(event)
             if((!event.action.type.includes("PLAY") || !event.action.type.includes("MOVE") || (event.time >= startTime)) && !isSoundEvent(event.action)) {
                 setTimeout(() => {
                         const elapsedTime = clock.elapsedTime;

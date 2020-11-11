@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Mesh } from 'three';
 import { omit } from 'lodash';
@@ -10,6 +10,10 @@ const SpotLight = (props) => {
     const lightTarget = new Mesh();
     
     const spotLightRef = React.useRef();
+
+    useEffect(() => {
+        spotLightRef.current.shadowDarkness = 1;
+    }, []);
 
     useFrame(({clock}, delta) => {
         if(props.update) props.update(spotLightRef, clock, delta)
@@ -24,9 +28,10 @@ const SpotLight = (props) => {
             <spotLight
                 ref={spotLightRef}
                 {...omit(props, "target")}
-                castShadow={true}
-                shadow-mapSize-width={SHADOW_MAP_SIZE}
-                shadow-mapSize-height={SHADOW_MAP_SIZE}
+                shadow-bias={-0.00005}
+                shadow-mapSize-width={256}
+                shadow-mapSize-height={256}
+                castShadow
                 target={lightTarget}
             />
         </group>

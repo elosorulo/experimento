@@ -22,28 +22,17 @@ const cubeRenderTarget = new WebGLCubeRenderTarget(256, {
   const SkyBox = () => {
   
     const { scene, gl } = useThree();
-  /**
-    React.useEffect(() => {
   
-      scene.add(cubeCamera);
-      scene.environment = cubeCamera.renderTarget.texture;
-      console.log("a ver");
-    }, []);
-  
-  
-    useFrame(() => cubeCamera.update(gl, scene));
-  */
-    // Set the scene background property to the resulting texture.
     React.useEffect(() => {
       const loader = new CubeTextureLoader();
-      // The CubeTextureLoader load method takes an array of urls representing all 6 sides of the cube.
+  
       const texture = loader.load([
-        "sky-1.jpg",
-        "sky-2.jpg",
-        "sky-3.jpg",
-        "sky-4.jpg",
-        "sky-5.jpg",
-        "sky-6.jpg",
+        "sky-1.png",
+        "sky-2.png",
+        "sky-3.png",
+        "sky-4.png",
+        "sky-5.png",
+        "sky-6.png",
       ]);
       scene.background = texture;
     }

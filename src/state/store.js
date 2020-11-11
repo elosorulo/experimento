@@ -31,10 +31,18 @@ const initialState = {
   tetrahedronsAnimations: animation(TETRAHEDRONS_AMOUNT),
   lathesAnimations: animation(LATHES_AMOUNT),
   spheresAnimations: animation(SPHERES_AMOUNT),
-  ringsAnimations: animation(RINGS_AMOUNT)
+  ringsAnimations: animation(RINGS_AMOUNT),
+  waves: []
 };
 
 export const [useStore, storeApi] = create(set => ({
     ...initialState,
-    dispatch: action => set(state => storeReducer(state, action))
+    dispatch: action => set(state => storeReducer(state, action)),
+    setWaves: waves => set(state => {
+      return {
+        ...state,
+        waves
+      }
+    }
+  )
 }));

@@ -25,6 +25,7 @@ const Plane = props => {
           position={props.position ? props.position : [0, 0, 0]}
           rotation={props.rotation ? props.rotation.map(n => Math.PI * n) : [0, 0, 0]}
           receiveShadow
+          castShadow
         >
           <planeGeometry args={[props.width, props.height]}/>
           <shadowMaterial color="#black" opacity={0.5} />

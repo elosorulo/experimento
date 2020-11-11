@@ -27,7 +27,7 @@ const Effects = () => {
         <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} />
         <Noise opacity={0.05} />
         <Vignette eskil={false} offset={0.1} darkness={0.1} />
-        <BrightnessContrast brightness={0.06} contrast={0.21}/>
+        <BrightnessContrast brightness={0.06} contrast={0.51}/>
       </EffectComposer>
     </Suspense>
   );

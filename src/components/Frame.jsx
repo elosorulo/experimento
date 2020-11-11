@@ -6,7 +6,7 @@ import { useSoundsApi } from './Sound';
 import Effects from './Effects';
 const FullSizeCanvas = (props) => {
     return (
-        <Canvas {...props} style={{height: "100vh", width: "100%"}} colorManagement shadowMap/>
+        <Canvas {...props} style={{height: "100vh", width: "100%"}} invalidateFrameloop shadowMap/>
     );
 }
 

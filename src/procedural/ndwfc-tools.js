@@ -201,18 +201,18 @@ var WFCTool3D = function(){
     var wx = tiles[0][0].length
     var wy = tiles[0].length;
     
-    var geometry = new THREE.BoxGeometry( 1/wx, 1/wy, 1/wz );
+    const geometryScale = 10;
 
+    var geometry = new THREE.BoxGeometry( geometryScale /wx, geometryScale/wy, geometryScale/wz );
     for (var K in wave){
       var [y,x,z] = K.split(",").map(x=>parseInt(x));
       for (var i = 0; i < wy; i++){
         for (var j = 0; j < wx; j++){
           for (var k = 0; k < wz; k++){
             var material = materials[tiles[wave[K]][i][j][k]]
-            console.log("a")
             if (material){
               var cube = new THREE.Mesh(geometry,material);
-              cube.position.set(x+j/wx,y+i/wy,z+k/wz)
+              cube.position.set(geometryScale * (z+k/wz), geometryScale * (x+j/wx),  geometryScale * (y+i/wy) + 10)
               cube.castShadow = true;
               cube.receiveShadow = true;
               root.add(cube);
